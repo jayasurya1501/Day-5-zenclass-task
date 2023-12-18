@@ -24,12 +24,12 @@ const resumeData = {
     }
   }
   
-  console.log("\nUsing for...of loop (not applicable in this case):");
+  console.log("\nUsing for...of loop :");
   for (let value of Object.values(resumeData)) {
     console.log(value);
   }
   
-  console.log("\nUsing forEach (not applicable in this case):");
+  console.log("\nUsing forEach :");
   Object.values(resumeData).forEach(value => {
     console.log(value);
   });
