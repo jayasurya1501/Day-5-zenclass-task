@@ -1,4 +1,4 @@
-const jsonObj = {
+const resumeData = {
     "name": "Jayasurya",
     "place": "Arakkonam",
     "state": "Tamil Nadu",
@@ -11,20 +11,28 @@ const jsonObj = {
       "specialization": "ECE",
       "bePercentage": 80
     }
-  }
+  };
   
-  
-
-  for (let key in jsonObj) {
-    console.log(key, jsonObj[key]);
-    if (Array.isArray(jsonObj[key])) {
-      for (let element of jsonObj[key]) {
-        console.log(element);
+  console.log("Using for...in loop:");
+  for (let key in resumeData) {
+    if (typeof resumeData[key] !== "object") {
+      console.log(key, ":", resumeData[key]);
+    } else {
+      for (let nestedKey in resumeData[key]) {
+        console.log(nestedKey, ":", resumeData[key][nestedKey]);
       }
-      jsonObj[key].forEach(element => {
-        console.log(element);
-      });
     }
   }
+  
+  console.log("\nUsing for...of loop (not applicable in this case):");
+  for (let value of Object.values(resumeData)) {
+    console.log(value);
+  }
+  
+  console.log("\nUsing forEach (not applicable in this case):");
+  Object.values(resumeData).forEach(value => {
+    console.log(value);
+  });
+  
   
   
